@@ -1,0 +1,23 @@
+<article id={{pokemon.id}} (click)="displayModal($event)">
+  <img src="{{pokemon.sprites['other']['dream_world']['front_default']}}" />
+  <section>
+    <p>{{pokemon.name}}</p>
+    <p>#{{pokemon.id}}</p>
+    <p>weight: {{pokemon.weight}}</p>
+    <p>height: {{pokemon.height}}</p>
+    <ul>
+      <li *ngFor="let pokemon of pokemon.types">
+        {{pokemon.type.name}}
+      </li> 
+    </ul>
+  </section>
+  <div class="modal" [ngClass]="this.display ? 'selected' : ''">
+    <article class="modal-box">
+      <h4>Do you want to select {{pokemon.name}}</h4>
+      <img src="{{pokemon.sprites.front_default}}"/>
+      <button>no thanks</button>
+      <button [routerLink]="['/card', pokemon.id]">ok</button>
+    </article>
+    box
+  </div>
+</article>

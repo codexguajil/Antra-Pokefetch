@@ -1,0 +1,16 @@
+<article id={{pokemon.id}}>
+  <img src="{{pokemon.sprites['other']['dream_world']['front_default']}}" />
+  <section>
+    <p>{{pokemon.name}}</p>
+    <p>#{{pokemon.id}}</p>
+    <p>weight: {{pokemon.weight}}</p>
+    <p>height: {{pokemon.height}}</p>
+    <ul>
+      <li *ngFor="let pokemon of pokemon.types">
+        {{pokemon.type.name}}
+      </li> 
+    </ul>
+  </section>
+</article>
+
+<button (click)="routePage()" >All</button>
